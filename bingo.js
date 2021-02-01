@@ -174,7 +174,6 @@ class Grid {
         }
         if (all_valid) {
             if (this.test_if_prev_bingo() == false) {
-                console.log("all valid dia1")
                 valid_bingos.push(this.bingo_cells);
             }
         }
@@ -199,13 +198,9 @@ class Grid {
         }
         if (all_valid) {
             if (this.test_if_prev_bingo() == false) {
-                console.log("all valid dia2")
                 valid_bingos.push(this.bingo_cells);
             }
         }
-        // else {
-        //     this.bingo_cells = []; // reset
-        // }
 
         this.bingo_cells = []; // reset
         for (let vbi = 0; vbi < valid_bingos.length; vbi++) {
@@ -256,7 +251,7 @@ class Grid {
         }
         
         if (this.bingo_cells.length > 0) {
-            draw_text(["BINGO!"], canvas.height/3, {x: canvas.width/2, y: canvas.height/2 + (canvas.height/3)/2}, "red");
+            draw_text(["BINGO!"], canvas.height/3, {x: canvas.width/2, y: canvas.height/2 + (canvas.height/3)/2}, "rgba(255,0,0,0.7)");
         }
 
     }
@@ -274,7 +269,12 @@ function update() {
 
 function draw() {
     clear_canvas();
-    grid.render();
+    if (canvas.width < canvas.height) draw_text(["TILT",
+    "","","","","","","","","","","","","","","","","","","","","",
+    "YOUR",
+    "","","","","","","","","","","","","","","","","","","","","",
+    "PHONE"], canvas.height/6);
+    else grid.render();
 }
 
 // listener functions
