@@ -17,6 +17,10 @@
 	- non-quadratic --> just allow bingo in smaller direction
 	- **as of now only quadratic support**
 
+## Bugs:
+
+- tapping does not work for iOS
+
 ## TODOs:
 
 - Multiplayer functions:
